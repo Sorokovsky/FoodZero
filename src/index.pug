@@ -1,0 +1,12 @@
+include mixins/head
+include mixins/vars
+include mixins/menu
+<!DOCTYPE html>
+html(lang="uk")
+    +head("Головна")
+body
+    include blocks/header
+    main.main
+        h1 Hello new Website
+    include blocks/footer
+    script(src="js/app.min.js")
