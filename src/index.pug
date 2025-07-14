@@ -1,12 +1,21 @@
 include mixins/head
 include mixins/vars
 include mixins/menu
+include mixins/button
+include mixins/hero-heading
+include mixins/heading-1
+include mixins/heading-2
+include mixins/heading-3
 <!DOCTYPE html>
 html(lang="uk")
     +head("Головна")
 body
     include blocks/header
     main.main
-        h1 Hello new Website
+        .main__container
+            +hero-heading("Large Title")
+            +heading-1("Heading 1")
+            +heading-2("Heading 2")
+            +heading-3("Heading 3")
     include blocks/footer
     script(src="js/app.min.js")

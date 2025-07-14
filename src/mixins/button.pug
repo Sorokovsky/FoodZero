@@ -1,0 +1,7 @@
+mixin button(text, href, filled=false)
+    - let filledClass = ""
+    - let buttonClass = "button"
+    if filled
+        - filledClass = " _filled"
+    - let classess = buttonClass + filledClass
+    a(href=href, type="button", class=classess)=text
