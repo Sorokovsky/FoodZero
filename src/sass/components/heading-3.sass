@@ -1,5 +1,7 @@
 @use "../mixins/index" as *
 @use "../settings" as *
+@use "../base"
 .heading-3
-    @include adaptiveValue("font-size", 68, 26)
-    line-height: 137.5%
+    @extend .heading
+    @include adaptiveValue("font-size", 68, 34)
+    line-height: 123.529412%

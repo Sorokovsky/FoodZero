@@ -42,3 +42,40 @@ a
     font-family: $rufinaFamily
     font-weight: bold
     color: $black
+.title
+    font-family: $latoFamily
+    font-size: 20px
+    line-height: 126%
+    color: $black
+.text
+    font-family: $latoFamily
+    font-size: 18px
+    line-height: 138.888889% // 25/18
+    letter-spacing: 2%
+.nav-item
+    font-family: $latoFamily
+    font-weight: bold
+    @include adaptiveValue("font-size", 66, 40)
+.nav-subitem
+    font-family: $latoFamily
+    font-size: 24px
+.body
+    @extend .nav-subitem
+    letter-spacing: 2%
+    line-height: 140%
+.body-b
+    @extend .body
+    font-weight: bold
+.body-cap
+    @extend .body
+    text-transform: uppercase
+    font-size: 20px
+.excerpt
+    @extend .body-b
+    font-size: 22px
+.label
+    @extend .body
+    font-size: 18px
+.comment
+    @extend .body
+    font-size: 14px
