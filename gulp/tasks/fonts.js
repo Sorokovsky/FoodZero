@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import fonter from "gulp-fonter";
 import ttf2woff2 from "gulp-ttf2woff2";
+import rename from "gulp-rename";
 import { gulp, path, plugins } from "../config/index.js";
 
 export const otfToTtf = () => {
@@ -18,7 +19,7 @@ export const otfToTtf = () => {
 };
 
 export const ttfToWoff = () => {
-    return gulp.src(`${path.srcFolder}/fonts/*.ttf`, {encoding: false})
+    return gulp.src(`${path.srcFolder}/fonts/*.ttf`, {encoding: false, base: path.srcFolder})
         .pipe(plugins.plumber(
             plugins.notify.onError({
                 title: "Fonts",
@@ -28,6 +29,11 @@ export const ttfToWoff = () => {
         .pipe(fonter({
             formats: ["woff"]
         }))
+        .pipe(rename(function (file) {
+        file.dirname  = "";     
+        file.basename = file.basename.replace("fonts\\", "");
+        file.extname  = file.extname;
+}))
         .pipe(gulp.dest(path.build.fonts))
         .on('end', () => {
             gulp.src(`${path.srcFolder}/fonts/*.ttf`, {encoding: false})
