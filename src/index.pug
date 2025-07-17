@@ -2,12 +2,20 @@ include mixins/head
 include mixins/vars
 include mixins/menu
 include mixins/button
+include mixins/tag
+include mixins/filter
+include mixins/pagination
 <!DOCTYPE html>
 html(lang="uk")
     +head("Головна")
 body
     include blocks/header
     main.main
-        .main__container 
+        .main__container
+            +button("More Contats")
+            +button("Subscribe", "./#", true)
+            +tag("Tag")
+            +filter("All")
+            +pagination("Prev")
     include blocks/footer
     script(src="js/app.min.js")

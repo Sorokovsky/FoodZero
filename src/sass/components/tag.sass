@@ -1,0 +1,13 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.tag
+    @extend .body
+    @extend ._label
+    @include border(10, 20)
+    text-decoration: none
+    transition: .3s all ease
+    @media screen and (any-hover: hover)
+        &:hover
+            background-color: $bronze
+            color: $white
