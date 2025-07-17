@@ -1,0 +1,10 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.button
+    @include border(20, 46)    
+    @extend .heading-5
+    text-decoration: none
+    color: $black
+    @media screen and (any-hover: hover)
+        

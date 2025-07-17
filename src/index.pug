@@ -1,6 +1,7 @@
 include mixins/head
 include mixins/vars
 include mixins/menu
+include mixins/button
 <!DOCTYPE html>
 html(lang="uk")
     +head("Головна")
@@ -8,6 +9,7 @@ body
     include blocks/header
     main.main
         .main__container 
-            .widget-title Widget
+            +button("More Contacts", "./#")
+            +button("Subscribe", "./#", true)
     include blocks/footer
     script(src="js/app.min.js")
