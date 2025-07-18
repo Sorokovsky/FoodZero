@@ -1,0 +1,49 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.comment
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+    gap: 34px
+    &__avatar
+        flex: 0 0 82px
+        width: 82px
+        height: 82px
+        overflow: hidden
+        border-radius: 50%
+    &__head
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+    &__content
+        flex: 1 1 auto
+        display: flex
+        flex-direction: column
+    &__left
+        display: flex
+        align-items: flex-start
+        flex-direction: column
+    &__author, &__button
+        @extend .body
+        @extend ._bold
+    &__time, &__text
+        @extend .body
+    &__time
+        color: $silverFail
+    &__text
+        color: $darkLiver
+    &__button
+        text-decoration: none
+        @media screen and (any-hover: hover)
+            &:hover
+                text-decoration: underline
+    &__content, &__head, &__left
+        gap: 14px
+    &__replyed
+        &:not(:first-child)
+            padding-top: 20px
+        display: flex
+        flex-direction: column
+        gap: 34px
+            

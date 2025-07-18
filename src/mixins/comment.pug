@@ -1,0 +1,14 @@
+mixin comment(comment)
+    article.comment 
+        figure.comment__avatar 
+            img(src=comment.avatar, alt=comment.nickName)
+        .comment__content
+            .comment__head
+                .comment__left
+                    author.comment__author=comment.nickName
+                    time.comment__time=comment.date
+                a(href="./#").comment__button Reply
+            p.comment__text=comment.text
+            .comment__replyed 
+                each subcomment in comment.replyed
+                    +comment(subcomment)
