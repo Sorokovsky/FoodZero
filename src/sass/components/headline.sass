@@ -1,0 +1,12 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.headline
+    max-width: 1057px
+    h1
+        @extend .hero-heading
+    p
+        @extend .body
+        max-width: 565px
+    > *:not(:last-child)
+        @include adaptiveValue("margin-bottom", 50, 20)
