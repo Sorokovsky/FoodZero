@@ -3,7 +3,6 @@ export const server = (done) => {
     plugins.browserSync.init({
         server: `${path.build.html}`,
         notify: false,
-        port: 3000,
-        open: false
+        port: 3000
     });
 }
