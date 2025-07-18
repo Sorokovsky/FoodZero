@@ -10,7 +10,7 @@
   font-display: block;
 }
 
-[class^="_icon-"], [class*=" _icon-"] {
+[class^="_icon-"]::before, [class*=" _icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -25,39 +25,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-arrow-left:before {
+._icon-arrow-left::before {
   content: "\e900";
 }
-._icon-arrow-right:before {
+._icon-arrow-right::before {
   content: "\e901";
 }
-._icon-back:before {
+._icon-back::before {
   content: "\e902";
 }
-._icon-carrot:before {
+._icon-carrot::before {
   content: "\e903";
 }
-._icon-down-arrow:before {
+._icon-down-arrow::before {
   content: "\e904";
 }
-._icon-facebook:before {
+._icon-facebook::before {
   content: "\e905";
 }
-._icon-fish:before {
+._icon-fish::before {
   content: "\e906";
 }
-._icon-instagram:before {
+._icon-instagram::before {
   content: "\e907";
 }
-._icon-lemon:before {
+._icon-lemon::before {
   content: "\e908";
 }
-._icon-search:before {
+._icon-search::before {
   content: "\e909";
 }
-._icon-twitter:before {
+._icon-twitter::before {
   content: "\e90a";
 }
-._icon-youtube:before {
+._icon-youtube::before {
   content: "\e90b";
 }

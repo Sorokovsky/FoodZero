@@ -5,6 +5,7 @@ include mixins/button
 include mixins/tag
 include mixins/filter
 include mixins/pagination
+include mixins/feature
 <!DOCTYPE html>
 html(lang="uk")
     +head("Головна")
@@ -12,6 +13,5 @@ body
     include blocks/header
     main.main
         .main__container
-            ._icon-arrow-left
     include blocks/footer
     script(src="js/app.min.js")

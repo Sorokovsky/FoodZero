@@ -1,0 +1,6 @@
+mixin feature(icon, title, text)
+    - let iconClass = "feature__icon _icon-" + icon;
+    .feature
+        div(class=iconClass)
+        .feature__title=title
+        .feature__text=text

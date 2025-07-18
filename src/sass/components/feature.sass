@@ -1,0 +1,25 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.feature
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    max-width: 508px
+    &__icon
+        @include border(69.63, 56.69)
+        border-radius: 50%
+        width: 260px
+        height: 260px
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 95px
+        background-color: $alabester
+        border: none
+    &__title
+        @extend .heading-4
+    > *:not(:last-child)
+        margin-bottom: 39px
