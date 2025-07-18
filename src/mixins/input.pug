@@ -1,0 +1,9 @@
+mixin input(label, name, id, isRequired=false, isTextarea=false)
+    if isRequired 
+        - label += "*"
+    .input 
+        label(for=id).input__label=label 
+        if isTextarea
+            textarea(id=id, name=name, autocomplete="off").input__field
+        else 
+            input(type="text", id=id, name=name, autocomplete="off").input__field

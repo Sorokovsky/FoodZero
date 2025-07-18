@@ -1,0 +1,21 @@
+@use "common"
+@use "../settings" as *
+@use "../mixins/index" as *
+.input
+    max-width: 100%
+    &__label
+        @extend .body
+        @extend ._bold
+        display: block
+    &__field
+        @extend .body
+        display: blck
+        resize: none
+        width: 100%
+        outline: none
+        padding: 15px
+        min-height: 88px
+    textarea
+        min-height: 434px
+    > *:not(:last-child)
+        margin-bottom: 16px
