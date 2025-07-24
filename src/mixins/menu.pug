@@ -2,4 +2,4 @@ mixin menu(items)
     ul
         each item in items
             li
-                a(href=item.href)=item.title
+                a(href=item.href).nav-item=item.title

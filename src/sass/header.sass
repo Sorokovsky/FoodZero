@@ -1,4 +1,5 @@
 @use "settings" as *
+@use "mixins/index" as *
 .header
     position: sticky
     z-index: 10
@@ -10,92 +11,91 @@
         align-items: center
         justify-content: space-between
         flex-wrap: wrap
+        z-index: 12
+        @include adaptiveValue("padding-top", 46, 20)
+        @include adaptiveValue("padding-bottom", 46, 20)
     &__logo
         flex: 0 0 auto
-        @media screen and ( max-width: $mobileBreakPoint+px)
-            z-index: 2
-    &__menu
-        flex: 0 1 auto
+        z-index: 12
+    &__part
+        display: flex
+        align-items: center
+        gap: 46px
+    .menu
+        &::before
+            content: ""
+            display: block
+            position: fixed
+            width: 100%
+            @include adaptiveValue("height", 211, 111.42)
+            background-color: darken($brown, 3)
+            top: 0
+            left: -100%
+            transition: $animationDuration left ease
+        position: fixed
+        overflow-y: scroll
+        z-index: 10
+        left: -100%
+        top: 0
+        width: 100%
+        height: 100%
+        @include adaptiveValue("padding-top", 222, 120)
+        background-image: linear-gradient(to right, rgba($brown, .8), rgba($brown, .8)), url("../img/menu-background.jpg")
+        transition: $animationDuration left ease
+        &._active
+            left: 0
+            &::before
+                left: 0
         ul
             display: flex
-            align-items: center
-            flex-wrap: wrap
-            column-gap: 15px
-            row-gap: 25px
+            flex-direction: column
+            gap: 28px
             li
-                font-size: 20px
-                font-weight: 700
                 list-style: none
                 a
+                    text-transform: uppercase
                     text-decoration: none
+                    color: $white
+                    display: inline-flex
+                    align-items: center
+                    gap: 14px
                     transition: $animationDuration all ease
-                    color: $mainHeaderLinkColor
-                    &::after
-                        margin-top: 5px
+                    &::before
                         content: ""
                         display: block
-                        width: 100%
-                        height: 1px
-                        transform-origin: center
-                        background-color: $mainHeaderLinkColorHover
-                        transform: scaleX(0)
+                        width: 12px
+                        height: 12px
+                        background-color: $white
+                        border-radius: 50%
                         transition: $animationDuration all ease
                     @media screen and (any-hover: hover)
                         &:hover
-                            color: $mainHeaderLinkColorHover
-                            &::after
-                                transform: scaleX(1)
-        @media screen and ( max-width: $mobileBreakPoint+px)
-            z-index: 1
-            background-color: $mainBgColor
-            padding-top: 70px
-            width: 100%
-            height: 100%
-            overflow-y: auto
-            &, &::before
-                position: fixed
-                top: 0
-                left: 100%
-                display: block
-                transition: $animationDuration left ease
-            &::before
-                content: ""
-                background-color: $mainBgColorHover
-                width: 100%
-                height: 70px
-            &._active, &._active::before
-                left: 0
-            ul
-                flex-direction: column
-                align-items: flex-end
-                padding: $verticalContainerPadding+px $horizontalContainerPadding+px
-                li
-                    font-size: 30px
+                            color: $appleGreen
+                            &::before
+                                background-color: $appleGreen
 .burger
-    display: none
-    @media screen and ( max-width: $mobileBreakPoint+px)
-        background: transparent
-        cursor: pointer
-        outline: none
-        border: none
+    background: transparent
+    cursor: pointer
+    outline: none
+    border: none
+    display: block
+    width: 46px
+    z-index: 12
+    &::before, &::after
+        content: ""
+    &::before, span, &::after
+        width: 100%
+        height: 2px
         display: block
-        width: 40px
-        z-index: 1
-        &::before, &::after
-            content: ""
-        &::before, span, &::after
-            width: 100%
-            height: 2px
-            display: block
-            margin-bottom: 5px
-            background-color: $mainHeaderLinkColorHover
-            transition: $animationDuration all ease
-        &._active
-            &::before
-                translate: 0 290%
-                rotate: 45deg
-            span
-                scale: 0 1
-            &::after
-                translate: 0 -290%
-                rotate: -45deg
+        margin-bottom: 14px
+        background-color: $mainHeaderLinkColorHover
+        transition: $animationDuration all ease
+    &._active
+        &::before
+            translate: 0 14px
+            rotate: 45deg
+        span
+            scale: 0 1
+        &::after
+            translate: 0 -16px
+            rotate: -45deg

@@ -1,8 +1,10 @@
 header.header
     div.header__container
-        a(href="./#").logo.header__logo
-            img(src="@img/logo.svg", alt="Logo")
-        nav.menu.header__menu
+        .header__part
+            a(href="./#").logo.header__logo
+                img(src="@img/logo.svg", alt="Logo")
+            button(type="button").burger 
+                span
+    nav.menu.header__menu
+        .menu__container
             +menu(menu)
-        button(type="button").burger 
-            span
