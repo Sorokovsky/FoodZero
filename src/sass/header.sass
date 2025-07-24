@@ -1,5 +1,6 @@
 @use "settings" as *
 @use "mixins/index" as *
+@use "sass:color"
 .header
     position: sticky
     z-index: 10
@@ -28,12 +29,12 @@
             position: fixed
             width: 100%
             @include adaptiveValue("height", 211, 111.42)
-            background-color: darken($brown, 3)
+            background-color: color.adjust($brown, $lightness: 5%)
             top: 0
             left: -100%
             transition: $animationDuration left ease
         position: fixed
-        overflow-y: scroll
+        overflow-y: auto
         z-index: 10
         left: -100%
         top: 0
