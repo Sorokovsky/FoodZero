@@ -1,0 +1,5 @@
+mixin search(placeHolder="Search......", name="search", id="search")
+    .search
+        form(action="#", method="GET").search__form
+            input(type="text", name=name, id=id, placeHolder=placeHolder).search__input
+            button(type="submit").search__button._icon-search
