@@ -5,6 +5,9 @@ header.header
                 img(src="@img/logo.svg", alt="Logo")
             button(type="button").burger 
                 span
+        .header__part._right
+            a(href="tel:+86852346000", data-dynamic="600,<=,.menu__container > ul,last").header__phone +86 852 346 000
+            a(data-dynamic="992,<=,.menu__container > ul,last").button Reservations
     nav.menu.header__menu
         .menu__container
             +menu(menu)

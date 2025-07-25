@@ -12,16 +12,32 @@
         align-items: center
         justify-content: space-between
         flex-wrap: wrap
-        z-index: 12
         @include adaptiveValue("padding-top", 46, 20)
         @include adaptiveValue("padding-bottom", 46, 20)
     &__logo
         flex: 0 0 auto
-        z-index: 12
     &__part
         display: flex
         align-items: center
         gap: 46px
+        z-index: 12
+        @media screen and (max-width: 600px)
+            justify-content: space-between
+            width: 100%
+        &._right
+            @media screen and (max-width: 600px)
+                display: none
+    .button
+        color: $white
+        border-color: $white
+    &__phone
+        text-decoration: none
+        color: $white
+        font-family: $interFamily
+        font-size: 26px
+        @media screen and (any-hover: hover)
+            &:hover
+                text-decoration: underline
     .menu
         &::before
             content: ""
@@ -29,7 +45,7 @@
             position: fixed
             width: 100%
             @include adaptiveValue("height", 211, 111.42)
-            background-color: color.adjust($brown, $lightness: 5%)
+            background-color: rgba($brown, .8)
             top: 0
             left: -100%
             transition: $animationDuration left ease
@@ -50,6 +66,7 @@
         ul
             display: flex
             flex-direction: column
+            align-items: flex-start
             gap: 28px
             li
                 list-style: none
