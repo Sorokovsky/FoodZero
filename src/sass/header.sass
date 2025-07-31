@@ -91,6 +91,38 @@
                             color: $appleGreen
                             &::before
                                 background-color: $appleGreen
+        ul.submenu
+            padding-left: 30px
+            gap: 6px
+            li
+                a::before
+                    display: none
+        &__container
+            display: flex
+            align-items: flex-end
+            justify-content: space-between
+            gap: 20px
+            flex-wrap: wrap
+            .contacts
+                display: flex
+                flex-direction: column
+                gap: 38px
+                max-width: 297px
+                width: 100%
+                color: $white
+                &__address
+                    max-width: 189px
+                &__title
+                    border-bottom: 1px dashed $white
+                &__socials
+                    display: flex
+                    align-items: flex-start
+                    font-size: 28px
+                    gap: 18px
+                    flex-wrap: wrap
+                a
+                    text-decoration: none
+                    display: block
 .burger
     background: transparent
     cursor: pointer

@@ -3,3 +3,7 @@ mixin menu(items)
         each item in items
             li
                 a(href=item.href).nav-item=item.title
+                ul.submenu
+                    each subItem in item.sub
+                        li
+                            a(href=subItem.href).nav-subitem=subItem.title

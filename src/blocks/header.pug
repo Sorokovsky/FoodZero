@@ -11,3 +11,16 @@ header.header
     nav.menu.header__menu
         .menu__container
             +menu(menu)
+            .header__contacts.contacts
+                .contacts__part
+                    h5.contacts__title.heading-5 Contact
+                .contacts__part
+                    a(href="tel:+86852346000").contacts__item.widget-text +86 852 346 000
+                    a(href="mailto:info@foodzero.com").contacts__item.widget-text info@foodzero.com
+                .contact__part
+                    p.contacts__address 1959 Sepulveda Blvd. Culver City, CA, 90230
+                .contact__part.contacts__socials
+                    a(href="./#").contacts__sotial._icon-instagram
+                    a(href="./#").contacts__sotial._icon-twitter
+                    a(href="./#").contacts__sotial._icon-facebook
+                    a(href="./#").contacts__sotial._icon-youtube
