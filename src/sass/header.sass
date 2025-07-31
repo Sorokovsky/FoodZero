@@ -120,6 +120,11 @@
                     font-size: 28px
                     gap: 18px
                     flex-wrap: wrap
+                    a
+                        transition: $animationDuration transform ease
+                        @media screen and (any-hover: hover)
+                            &:hover
+                                transform: scale(1.1)
                 a
                     text-decoration: none
                     display: block
